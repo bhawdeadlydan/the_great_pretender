@@ -20,4 +20,6 @@ It provides some basic scripting to
 
 ## What this ./go thing? Is that a golang thing?
 No, just a naming collision. All this is written in bash (so far). See these [two](https://www.thoughtworks.com/insights/blog/praise-go-script-part-i) [articles](https://www.thoughtworks.com/insights/blog/praise-go-script-part-ii) for some background on the whole ./go script idea.
-- th
+
+## How does this script know how to prep each service?
+It doesn't. It just looks for a `tooling/devprep` script inside each repo after cloning the repo and runs it if it can find it. Service maintainers are expected to use that script to automate whatever a dev needs to do after cloning the repo to get to the state that they can run the service (e.g. bundle install, create and migrate dev databases).
