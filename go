@@ -22,15 +22,15 @@ function prep_if_needed {
 	then
 	  echo "Looks like you don't have the $repo_name repo. Cloning it for you now..."
 	  git clone $repo_url $repo_dir
-
-		cd $repo_dir
-		if [ -x "./tooling/devprep" ]
-		then
-		  ./tooling/devprep
-    else
-			echo "!!! NO DEVPREP FOR $repo_name"
-		fi
   fi
+
+	cd $repo_dir
+	if [ -x "./tooling/devprep" ]
+	then
+	  ./tooling/devprep
+  else
+		echo "!!! NO DEVPREP FOR $repo_name"
+	fi
 }
 
 function pull {
