@@ -80,8 +80,8 @@ prep)
 	prep_all
   ;;
 pull)
-	prep_all
   pull_all
+  prep_all
   ;;
 run)
 	prep_all
