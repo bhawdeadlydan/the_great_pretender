@@ -12,17 +12,22 @@ REPOS=(
   'ci'
 	)
 
+function init_if_needed {
+  local repo_name=$1
+  local repo_dir="$MY_DIR/$repo_name"
+  local repo_url="git@github.com:ThoughtWorks-AELab/$repo_name.git"
+
+  if [ ! -d $repo_dir ]
+  then
+    echo "Looks like you don't have the $repo_name repo. Cloning it for you now..."
+    git clone $repo_url $repo_dir
+  fi
+}
+
 function prep_if_needed {
 	local repo_name=$1
 	local repo_dir="$MY_DIR/$repo_name"
-	# local repo_url="git@github.com:moredip/$repo_name.git"
-	local repo_url="git@github.com:ThoughtWorks-AELab/$repo_name.git"
-
-	if [ ! -d $repo_dir ]
-	then
-	  echo "Looks like you don't have the $repo_name repo. Cloning it for you now..."
-	  git clone $repo_url $repo_dir
-  fi
+  init_if_needed $repo_name
 
 	cd $repo_dir
 	if [ -x "./tooling/devprep" ]
@@ -36,6 +41,7 @@ function prep_if_needed {
 function pull {
 	local repo_name=$1
 	local repo_dir="$MY_DIR/$repo_name"
+  init_if_needed $repo_name
 	echo "pulling $repo_name..."
 	(cd $repo_dir && git pull)
 }
@@ -43,6 +49,7 @@ function pull {
 function run {
 	local repo_name=$1
 	local repo_dir="$MY_DIR/$repo_name"
+  init_if_needed $repo_name
 	(cd $repo_dir && bundle exec rake server)
 }
 
