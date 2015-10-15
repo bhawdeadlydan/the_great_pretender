@@ -10,6 +10,7 @@ REPOS=(
 	'pretend_pricing_service'
 	'pretend_deals_service'
   'ci'
+  'cloudfoundry-deploy'
 	)
 
 function init_if_needed {
