@@ -11,6 +11,8 @@ REPOS=(
 	'pretend_deals_service'
   'ci'
   'cloudfoundry-deploy'
+  'custom-buildpack'
+  'help_needed_app'
 	)
 
 function init_if_needed {
