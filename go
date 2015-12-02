@@ -11,7 +11,7 @@ REPOS=(
 	'pretend_deals_service'
   'ci'
   'cloudfoundry-deploy'
-  'custom-buildpack'
+  'custom_buildpack'
   'help_needed_app'
 	)
 
