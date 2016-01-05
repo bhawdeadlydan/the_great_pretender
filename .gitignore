@@ -1,6 +1,6 @@
 ci/
 pretend_*/
 cloudfoundry-deploy/
-custom-buildpack/
+custom_buildpack/
 help_needed_app/
 multiprocess_app/
