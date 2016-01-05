@@ -3,3 +3,4 @@ pretend_*/
 cloudfoundry-deploy/
 custom-buildpack/
 help_needed_app/
+multiprocess_app/

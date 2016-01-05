@@ -13,6 +13,7 @@ REPOS=(
   'cloudfoundry-deploy'
   'custom_buildpack'
   'help_needed_app'
+  'multiprocess_app'
 	)
 
 function init_if_needed {
